@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -9,7 +8,7 @@
 </head>
 <body class="bg-lime-100 flex flex-col items-center justify-center min-h-screen p-4">
 
-    <h1 class="text-3xl text-bold mb-12">Gerador de Charadas</h1>
+    <h1 class="text-3xl font-bold mb-12">Gerador de Charadas</h1>
 
     <div class="group w-full max-w-sm [perspective:1000px] h-64">
         <div id="card-inner" class="relative w-full h-full transition-all duration-500 [transform-style:preserve-3d] cursor-pointer shadow-2xl rounded-2xl">
@@ -28,9 +27,28 @@
         </div>
     </div>
 
-    <button id="btn-nova" class="mt-8 bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full transition-transform active:scale-95 shadow-lg">
+    <div class="mt-8 w-full max-w-sm bg-white p-4 rounded-xl shadow-md border-t-4 border-blue-500">
+        <label for="input-palpite" class="block text-sm font-bold text-gray-600 mb-2 uppercase text-center">Tente adivinhar!</label>
+        <div class="flex gap-2">
+            <input type="text" id="input-palpite" placeholder="Sua resposta..." class="flex-1 border-2 border-gray-200 rounded-lg px-3 py-2 focus:border-blue-400 outline-none transition-colors">
+            <button id="btn-verificar" class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-lg transition-transform active:scale-95">
+                Verificar
+            </button>
+        </div>
+        <p id="feedback" class="mt-3 text-sm font-bold text-center hidden"></p>
+    </div>
+
+    <button id="btn-nova" class="mt-6 bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full transition-transform active:scale-95 shadow-lg">
         Nova Charada 🎲
     </button>
+
+    <div class="mt-10 w-full max-w-sm">
+        <h2 class="text-gray-500 font-bold text-xs uppercase tracking-widest mb-4 flex items-center justify-center">
+            <span class="mr-2">🕒</span> Últimas Charadas
+        </h2>
+        <ul id="historico" class="space-y-2">
+            </ul>
+    </div>
 
 <script src="javascript.js"></script>
 </body>
